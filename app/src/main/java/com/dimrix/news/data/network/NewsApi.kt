@@ -21,6 +21,6 @@ object NewsApiClient {
 
 interface NewsApiService {
 
-    @GET("v2/everything?q=bitcoin&from=2019-06-24&sortBy=publishedAt&apiKey=$KEY_API")
+    @GET("v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=$KEY_API")
     suspend fun getNewsAsync(): NewsApiResponse
 }

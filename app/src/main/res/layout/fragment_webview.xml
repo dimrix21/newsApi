@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.dimrix.news.screens.webview.WebViewViewModel" />
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <WebView
+                android:id="@+id/frag_webview_webview"
+                attachLoadingContainer="@{fragWebviewPbContainer}"
+                attachProgressBarAndContainer="@{fragWebviewPb}"
+                loadUrl="@{viewModel.url}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+                android:id="@+id/frag_webview_pb_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading"
+                    android:textSize="20sp" />
+
+            <ProgressBar
+                    android:id="@+id/frag_webview_pb"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

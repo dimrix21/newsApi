@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/mainArticles">
+
+    <fragment
+            android:id="@+id/mainArticles"
+            android:name="com.dimrix.news.screens.main.MainFragment"
+            android:label="Main">
+        <action
+                android:id="@+id/action_mainArticles_to_webViewContainer"
+                app:destination="@id/webViewContainer" />
+    </fragment>
+    <fragment
+            android:id="@+id/webViewContainer"
+            android:name="com.dimrix.news.screens.webview.WebViewFragment"
+            android:label="Article">
+        <argument
+                android:name="url"
+                app:argType="string" />
+    </fragment>
+</navigation>
